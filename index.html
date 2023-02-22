@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link href="./styles.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root">
+
+
+        <div class="App w-full h-screen text-white bg-green-400">
+            <h1 class='text-3xl'>Simple expense manager project</h1>
+            <div class='flex flex-col justify-center items-center'>
+                <div class='flex flex-col w-3/5 '>
+
+
+
+                    <div class="relative overflow-x-auto">
+                        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                            <tbody>
+
+                                <tr class="  bg-inherit dark:border-gray-700">
+                                    <th scope="row"
+                                        class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        <div>Add a new Item: </div>
+                                    </th>
+
+                                    <td class="px-6 py-4">
+                                        <div>Add <span>+</span></div>
+                                    </td>
+                                </tr>
+                                <tr class="   bg-inherit dark:border-gray-700">
+                                    <th scope="row"
+                                        class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                                            <tbody>
+                                                <tr class="  bg-inherit dark:border-gray-700">
+                                                    <th scope="row"
+                                                        class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                        Type
+                                                    </th>
+                                                    <td class="px-6 py-4">
+                                                        <div class="relative w-full lg:max-w-sm">
+                                                            <select id="paymentType"
+                                                                class="w-full p-2.5 text-gray-500  border rounded-md shadow-sm outline-none appearance-none focus:border-indigo-600">
+                                                                <option key="" value="">Select Type</option>
+                                                                <option key="Cash" value="Cash">Cash</option>
+                                                                <option key="Online" value="Online">Online</option>
+                                                                <option key="Paytm" value="Paytm">Paytm</option>
+
+                                                            </select>
+                                                        </div>
+                                                        <span class='redColor' id="typeError"></span>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </th>
+
+                                    <td class="px-6 py-4">
+                                        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                                            <tbody>
+                                                <tr class="  bg-inherit dark:border-gray-700">
+                                                    <th scope="row"
+                                                        class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                        Add Friend
+                                                    </th>
+                                                    <td class="px-6 py-4">
+                                                        <div class="relative w-full lg:max-w-sm">
+                                                            <select id="friendName"
+                                                                class="w-full p-2.5 text-gray-500  border rounded-md shadow-sm outline-none appearance-none focus:border-indigo-600">
+
+                                                                <option key="" value="">Select Friend</option>
+
+                                                                <option key="Andy" value="Andy">Andy</option>
+                                                                <option key="Mandy" value="Mandy">Mandy</option>
+                                                                <option key="Shandy" value="Shandy">Shandy</option>
+
+
+                                                                <option key="Randy" value="Randy">Randy</option>
+                                                                <option key="Candy" value="Candy">Candy</option>
+
+
+                                                            </select>
+                                                        </div>
+                                                        <span class='redColor' id="friendError"></span>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+
+                                <tr class="  bg-inherit dark:border-gray-700">
+                                    <th scope="row"
+                                        class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                                            <tbody>
+                                                <tr class="  bg-inherit dark:border-gray-700">
+                                                    <th scope="row"
+                                                        class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                        Name
+                                                    </th>
+                                                    <td class="px-6 py-4">
+                                                        <div class="relative w-full lg:max-w-sm">
+                                                            <input type="text" placeholder='What did you spend
+                                                On?' name="" id="nameInp" class='w-full p-2.5 text-gray-500 border
+                                                rounded-md shadow-sm outline-none appearance-none
+                                                focus:border-indigo-600' />
+                                                        </div>
+                                                        <span class='redColor' id="nameError"></span>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </th>
+
+                                    <td class="px-6 py-4">
+                                        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                                            <tbody>
+                                                <tr class="bg bg-inherit dark:border-gray-700">
+                                                    <th scope="row"
+                                                        class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                        Date
+                                                    </th>
+                                                    <td class="px-6 py-4">
+                                                        <div class="relative w-full lg:max-w-sm">
+                                                            <input type="date" id="inpdate" name="" class='w-full 
+                                                p-2.5 text-gray-500 border rounded-md shadow-sm outline-none
+                                                appearance-none focus:border-indigo-600' />
+                                                        </div>
+
+                                                        <span class='redColor' id="dateError"></span>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+
+                                <tr class="bg-inherit dark:border-gray-700">
+                                    <th scope="row"
+                                        class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                                            <tbody>
+                                                <tr class="bg-inherit dark:border-gray-700">
+                                                    <th scope="row"
+                                                        class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                        Currency
+                                                    </th>
+                                                    <td class="px-6 py-4">
+                                                        <div class="relative w-full lg:max-w-sm">
+                                                            <select id="currency"
+                                                                class="w-full p-2.5 text-gray-500  border rounded-md shadow-sm outline-none appearance-none focus:border-indigo-600">
+                                                                <option value="">Select Currency</option>
+
+                                                                <option key="USD" value="USD">USD</option>
+                                                                <option key="INR" value="INR">INR</option>
+                                                                <option key="BIT COIN" value="BIT COIN">BIT COIN
+                                                                </option>
+
+                                                            </select>
+                                                        </div>
+                                                        <span class='redColor' id="currencyError"></span>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </th>
+
+                                    <td class="px-6 py-4">
+                                        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                                            <tbody>
+                                                <tr class="  bg-inherit dark:border-gray-700">
+                                                    <th scope="row"
+                                                        class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                        Amount
+                                                    </th>
+                                                    <td class="px-6 py-4">
+                                                        <div class="relative w-full lg:max-w-sm">
+                                                            <input type="number" placeholder='How much?' name=""
+                                                                id="amount" class='w-full p-2.5 text-gray-500 border
+                                                rounded-md shadow-sm outline-none appearance-none
+                                                focus:border-indigo-600' />
+                                                        </div>
+                                                        <span class='redColor' id="amoutError"></span>
+
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <button id="submitButton"
+                            class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-auto my-2 py-2 px-4 rounded-lg">
+                            Add a new expense
+                        </button>
+                    </div>
+
+
+
+
+
+                    <div class="relative overflow-x-auto">
+
+                        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                            <tbody>
+                                <tr class="  bg-inherit w-full dark:border-gray-700">
+                                    <th scope="row"
+                                        class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                                            <tbody>
+                                                <tr class="  bg-inherit dark:border-gray-700">
+                                                    <th scope="row"
+                                                        class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                        Filter by Friend :
+                                                    </th>
+                                                    <td class="px-6 py-4">
+                                                        <div class="relative w-full lg:max-w-sm">
+                                                            <select id="friendNameFilter"
+                                                                class="w-full p-2.5 text-gray-500  border rounded-md shadow-sm outline-none appearance-none focus:border-indigo-600">
+
+                                                                <option key="" value="">Select Friend</option>
+
+                                                                <option key="Andy" value="Andy">Andy</option>
+                                                                <option key="Mandy" value="Mandy">Mandy</option>
+                                                                <option key="Shandy" value="Shandy">Shandy</option>
+
+
+                                                                <option key="Randy" value="Randy">Randy</option>
+                                                                <option key="Candy" value="Candy">Candy</option>
+
+
+                                                            </select>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </th>
+                                    <td class="px-6 py-4">
+                                        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                                            <tbody>
+                                                <tr class="  bg-inherit dark:border-gray-700">
+                                                    <th scope="row"
+                                                        class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                        Currency
+                                                    </th>
+                                                    <td class="px-6 py-4">
+                                                        <div class="relative w-full lg:max-w-sm">
+                                                            <select id="currencyFilter"
+                                                                class="w-full p-2.5 text-gray-500  border rounded-md shadow-sm outline-none appearance-none focus:border-indigo-600">
+                                                                <option value="">Select Currency</option>
+
+                                                                <option key="USD" value="USD">USD</option>
+                                                                <option key="INR" value="INR">INR</option>
+                                                                <option key="BIT COIN" value="BIT COIN">BIT COIN
+                                                                </option>
+
+                                                            </select>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+
+
+
+
+
+
+
+                    <div class="relative overflow-x-auto">
+                        <div class="relative overflow-x-auto">
+                            <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                                <thead
+                                    class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                                    <tr>
+                                        <th scope="col" class="px-6 py-3">
+                                            type
+                                        </th>
+                                        <th scope="col" class="px-6 py-3">
+                                            name
+                                        </th>
+                                        <th scope="col" class="px-6 py-3">
+                                            Friends
+                                        </th>
+                                        <th scope="col" class="px-6 py-3">
+                                            date
+                                        </th>
+                                        <th scope="col" class="px-6 py-3">
+                                            amount
+                                        </th>
+                                        <th scope="col" class="px-6 py-3">
+                                            edit
+                                        </th>
+                                        <th scope="col" class="px-6 py-3">
+                                            delete
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tableBody">
+
+
+                                    <!-- {
+                                    tableData && tableData.length > 0 ?
+                                    tableData.filter((item) =>
+
+                                    formData.filterFriend === 'Select Friend' ? true :
+
+                                    item.friend == formData.filterFriend
+
+
+                                    ).filter((item) =>
+
+                                    formData.filterCurrency === 'Select Currency' ? true :
+                                    item.currency == formData.filterCurrency
+                                    )
+
+
+                                    .map((item) => ( -->
+
+
+
+
+
+
+                                    <!-- <tr class=" border-b dark:bg-gray-800 dark:border-gray-700">
+                                        <th scope="row"
+                                            class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                            {item.type}
+                                        </th>
+                                        <td class="px-6 py-4">
+                                            {item.name}
+                                        </td>
+                                        <td class="px-6 py-4">
+                                            {item.friend}
+                                        </td>
+                                        <td class="px-6 py-4">
+                                            {item.date}
+                                        </td>
+                                        <td class="px-6 py-4">
+                                            {item.amount}
+                                        </td>
+                                        <td class="px-6 py-4">
+                                            Edit
+                                        </td>
+                                        <td class="px-6 py-4">
+                                            Delete
+                                        </td>
+                                    </tr> -->
+
+
+
+
+
+
+
+
+                                    <!-- ))
+                                    : -->
+                                    <tr class=" border-b dark:bg-gray-800 dark:border-gray-700">
+                                        <th scope="row"
+                                            class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                            No Data
+                                        </th>
+                                    </tr>
+                                    <!-- } -->
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+
+
+
+
+
+
+
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+</body>
+
+<script src="./script.js"></script>
+
+</html>
